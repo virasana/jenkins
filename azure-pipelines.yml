@@ -19,14 +19,14 @@ steps:
   displayName: 'Run a multi-line script'
 
 # Copy files from a source folder to a target folder using patterns matching file paths (not folder paths)
-- task: CopyFiles@1
+- task: CopyFiles@2
   inputs:
     sourceFolder: '$(Build.SourcesDirectory)' 
     contents: '**' 
     targetFolder: '$(Build.ArtifactStagingDirectory)'
 
 # Publish build artifacts to Azure Pipelines or a Windows file share
-- task: PublishBuildArtifacts@2
+- task: PublishBuildArtifacts@1
   inputs:
     pathtoPublish: '$(Build.ArtifactStagingDirectory)' 
     artifactName: 'drop' 
